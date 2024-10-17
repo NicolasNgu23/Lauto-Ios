@@ -102,7 +102,7 @@ struct CarDetailView: View {
                     HStack {
                         Button(action: {
                             viewModel.addParticipant(username: username, carName: car.name)
-                            alertMessage = "Vous avez participé au tirage!"
+                            alertMessage = "Vous participez au tirage!"
                             showAlert = true
                         }) {
                             HStack {
@@ -112,11 +112,13 @@ struct CarDetailView: View {
                                 Text("Entrer dans le jeu pour \(car.ticketPrice)€")
                                     .font(.headline)
                                     .foregroundColor(.white)
+                                Spacer()
                                 Text("Fin du jeu le \(car.drawDate)")
                                     .font(.headline)
                                     .foregroundColor(.white)
                             }
                             .padding()
+                            .frame(maxWidth: .infinity)
                             .background(Color.black.opacity(0.90))
                             .cornerRadius(10)
                             .frame(maxWidth: .infinity, alignment: .center)
